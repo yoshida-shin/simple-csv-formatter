@@ -1,4 +1,5 @@
 # simple-csv-formatter
+This is a simple tool to format CSV files for easy reuse (e.g. spreadsheets, Notion, data cleanup).
 CSVファイルを簡単に整形するPythonスクリプトです。
 
 ## できること
@@ -11,3 +12,11 @@ CSVファイルを簡単に整形するPythonスクリプトです。
 ```bash
 python simple_csv_formatter.py input.csv output.csv
 ```
+- input.csv: original CSV file
+- output.csv: formatted CSV file
+
+### Before
+name,age,city
+
+### After
+name | age | city
