@@ -19,4 +19,4 @@ python simple_csv_formatter.py input.csv output.csv
 name,age,city
 
 ### After
-name | age | city
+city,name,age
