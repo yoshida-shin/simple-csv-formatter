@@ -18,8 +18,19 @@ def format_csv(input_path, output_path):
         raise ValueError("CSVが空です")
 
     header = rows[0]
+    required_columns = ["city", "name", "age"]
+
+    for col in required_columns:
+        if col not in header:
+            print(f"必要な列がありません: {col}")
+            sys.exit(1)
     data_rows = rows[1:]
     
+    for row in rows[1:]:
+        if len(row) != len(header):
+            print("列数が合わない行があります")
+            sys.exit(1)
+            
     # ヘッダ名 → インデックス の対応表を作る
     index_map = {name: i for i, name in enumerate(header)}
     
