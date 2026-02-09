@@ -1,14 +1,11 @@
 # simple-csv-formatter
-This is a simple tool to format CSV files for easy reuse (e.g. spreadsheets, Notion, data cleanup).
-
-CSVファイルを簡単に整形するPythonスクリプトです。
-
+This is a simple tool to format CSV files for easy reuse (e.g. spreadsheets, Notion, data cleanup).  
+CSVファイルを簡単に整形するPythonスクリプトです。  
 ※ 想定外の列構成の場合はエラーメッセージを表示して終了します
 
 ## 概要
 
-このスクリプトは、CSVファイルの列順を指定順に並び替えるための
-
+このスクリプトは、CSVファイルの列順を指定順に並び替えるための  
 簡易データ整形ツールです。
 
 ## できること
