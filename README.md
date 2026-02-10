@@ -1,28 +1,47 @@
 # simple-csv-formatter
-This is a simple tool to format CSV files for easy reuse (e.g. spreadsheets, Notion, data cleanup).  
-CSVファイルを簡単に整形するPythonスクリプトです。  
-※ 想定外の列構成の場合はエラーメッセージを表示して終了します
-
-## 概要
-
-このスクリプトは、CSVファイルの列順を指定順に並び替えるための  
-簡易データ整形ツールです。
+CSVファイルの列を指定した順番に並び替えるPythonツールです。  
+列不足や不正なCSVの場合は、分かりやすいエラーメッセージを表示します。
 
 ## できること
 
-- 空行を削除
-- 列の順番を指定通りに並び替え
-
+- CSVの列を指定順に並び替える
+- 必要な列が不足している場合はエラー表示
+- 列数が足りない行がある場合はエラー表示
+- dry-run（チェックのみ実行）に対応
+\
 ## 使い方
-
 ```bash
-python simple_csv_formatter.py input.csv output.csv
+python simple_csv_formatter.py -i input.csv -o output.csv
 ```
-- input.csv: original CSV file
-- output.csv: formatted CSV file
+```bash
+python simple_csv_formatter.py -i input.csv -o output.csv --dry-run
+```
+## オプション
 
-### Before
-name,age,city
+| オプション | 説明 |  
+|----------|------|  
+| -i, --input | 入力CSVファイル |  
+| -o, --output | 出力CSVファイル |  
+| --dry-run | チェックのみ実行（出力ファイルは作成しない） |  
 
-### After
-city,name,age
+## 入力CSVの仕様
+
+- 1行目はヘッダー行であること
+- 必要な列がすべて含まれていれば、列の順番は自由
+- 列数が不足している行がある場合はエラーになります
+
+## エラーについて
+
+以下の場合、処理は中断されエラーメッセージが表示されます。
+
+- 必要な列が存在しない場合
+- 列数が不足している行がある場合
+
+エラーメッセージには、問題の内容が分かるように詳細が表示されます。
+
+## 実行例
+
+```text
+$ python simple_csv_formatter.py -i input.csv -o output.csv --dry-run
+✅ 正常に処理が完了しました
+```
