@@ -54,7 +54,7 @@ python simple_csv_formatter.py -i input.csv -o output.csv --dry-run
 ```bash
 python simple_csv_formatter.py -i input.csv -o output.csv --verbose
 ```
-2026-02-17 19:10:48 [INFO] CSV処理を開始します
-2026-02-17 19:10:48 [DEBUG] 入力ファイルを開きます
-2026-02-17 19:10:48 [INFO] ✅ 正常に処理が完了しました
-2026-02-17 19:10:48 [INFO] 出力ファイル: output.csv
+2026-02-17 19:10:48 [INFO] CSV処理を開始します  
+2026-02-17 19:10:48 [DEBUG] 入力ファイルを開きます  
+2026-02-17 19:10:48 [INFO] ✅ 正常に処理が完了しました  
+2026-02-17 19:10:48 [INFO] 出力ファイル: output.csv  
