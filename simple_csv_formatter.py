@@ -44,6 +44,13 @@ def validate_rows(rows: list[list[str]]) -> None:
     if missing:
         raise ValueError("必要な列が不足しています")
 
+    expected_len = len(header)
+    for i, row in enumerate(rows[1:], start = 2):
+        if not row:
+            continue
+        if len(row) != expected_len:
+            raise ValueError(f"{i}行目の列数が不足しています")
+    
 def build_formatted_rows(rows: list[list[str]]) -> list[list[str]]:
     header = rows[0]
     data_rows = rows[1:]
@@ -57,7 +64,7 @@ def build_formatted_rows(rows: list[list[str]]) -> list[list[str]]:
             continue
     
         new_row = [row[i] for i in new_indexes]
-
+        formatted.append(new_row)
     return formatted
 
 def save_csv(path: str, rows: list[list[str]]) -> None:

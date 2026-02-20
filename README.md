@@ -3,22 +3,28 @@ CSVファイルの列を指定した順番に並び替えるPythonツールで�
 列不足や不正なCSVの場合は、分かりやすいエラーメッセージを表示します。
 
 ## できること
-
 - CSVの列を指定順に並び替える
 - 必要な列が不足している場合はエラー表示
 - 列数が足りない行がある場合はエラー表示
 - dry-run（チェックのみ実行）に対応
 - verbose 詳細なログ(DEBUGレベル)を表示
+- pytestによる単体テスト・CLIテスト付き
 
 ## 使い方
 ```bash
 python simple_csv_formatter.py -i input.csv -o output.csv
 ```
+dry-runモード  
 ```bash
 python simple_csv_formatter.py -i input.csv -o output.csv --dry-run
 ```
+詳細ログ表示  
 ```bash
 python simple_csv_formatter.py -i input.csv -o output.csv --verbose
+```
+テスト実行  
+```bash
+python -m pytest -v
 ```
 
 ## オプション
@@ -45,16 +51,12 @@ python simple_csv_formatter.py -i input.csv -o output.csv --verbose
 
 エラーメッセージには、問題の内容が分かるように詳細が表示されます。
 
-## 実行例
+##必要環境
+* Pythion 3.9+  
+* pytest 7.x
 
-```bash
-python simple_csv_formatter.py -i input.csv -o output.csv --dry-run
-```
-✅ 正常に処理が完了しました  
-```bash
-python simple_csv_formatter.py -i input.csv -o output.csv --verbose
-```
-2026-02-17 19:10:48 [INFO] CSV処理を開始します  
-2026-02-17 19:10:48 [DEBUG] 入力ファイルを開きます  
-2026-02-17 19:10:48 [INFO] ✅ 正常に処理が完了しました  
-2026-02-17 19:10:48 [INFO] 出力ファイル: output.csv  
+##ディレクトリ構成
+simple\_csv\_formatter.py  
+tests/  
+	test\_cli.py  
+	test\_formatter.py  
