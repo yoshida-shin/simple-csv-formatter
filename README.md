@@ -55,7 +55,7 @@ python -m pytest -v
 * Pythion 3.9+  
 * pytest 7.x
 
-##ディレクトリ構成
+##ディレクトリ構成  
 simple\_csv\_formatter.py  
 tests/  
 	test\_cli.py  
