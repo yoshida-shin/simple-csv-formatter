@@ -51,11 +51,13 @@ python -m pytest -v
 
 エラーメッセージには、問題の内容が分かるように詳細が表示されます。
 
-##必要環境
+## 必要環境
+
 * Pythion 3.9+  
 * pytest 7.x
 
-##ディレクトリ構成  
+## ディレクトリ構成  
+
 simple\_csv\_formatter.py  
 tests/  
 	test\_cli.py  
