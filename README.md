@@ -58,7 +58,7 @@ python -m pytest -v
 
 ## ディレクトリ構成  
 
-simple\_csv\_formatter.py  
+simple_csv_formatter.py  
 tests/  
-	test\_cli.py  
-	test\_formatter.py  
+	test_cli.py  
+	test_formatter.py  
